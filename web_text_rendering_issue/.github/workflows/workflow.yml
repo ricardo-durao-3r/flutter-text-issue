@@ -15,19 +15,19 @@ runs-on: ubuntu-latest
         channel: 'dev'
     - name: Upgrades flutter
       run: flutter upgrade
-      working-directory: ./example
+      working-directory: ./web_text_rendering_issue
     - name: Enable Web
       run: flutter config --enable-web
-      working-directory: ./example
+      working-directory: ./web_text_rendering_issue
     - name: Install dependencies
       run: flutter packages get
-      working-directory: ./example
+      working-directory: ./web_text_rendering_issue
     - name: Build Web
       run: flutter build web
-      working-directory: ./example
+      working-directory: ./web_text_rendering_issue
     - name: Deploy
       run: |
-        cd example/build/web
+        cd web_text_rendering_issue/build/web
         git init
         git config user.name  "CI"
         git config user.email "flutter-ci@github.com"
